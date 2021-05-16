@@ -6,8 +6,12 @@
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "radio-browser-api": "^2.2.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-h5-audio-player": "^3.7.0",
+    "react-intl": "^5.17.6",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.2"
   },
@@ -15,7 +19,20 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "lint": "eslint ./ --cache",
+    "lint-fix": "eslint ./ --fix"
+  },
+  "lint-staged": {
+    "*.{js}": [
+      "eslint"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && pretty-quick --staged"
+    }
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +51,20 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-promise": "^4.3.1",
+    "eslint-plugin-react": "^7.23.0",
+    "eslint-plugin-standard": "^4.0.2",
+    "lint-staged": "^10.5.4",
+    "husky": "^4.3.0",
+    "prettier": "^2.2.1",
+    "pretty-quick": "^3.1.0"
   }
 }
