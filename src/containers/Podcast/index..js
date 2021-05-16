@@ -1,11 +1,11 @@
 import React from "react";
 
-function Radio() {
+function Podcast() {
   return (
     <div>
-      <h1>Radio</h1>
+      <h1>Podcast</h1>
     </div>
   );
 }
 
-export default Radio;
+export default Podcast;
