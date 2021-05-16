@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Switch } from "react-router-dom";
 
 import Routes from "Routes";
 
+import "scss/main.scss";
+
 ReactDOM.render(
   <React.StrictMode>
     <Router>

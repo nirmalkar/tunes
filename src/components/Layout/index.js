@@ -2,13 +2,7 @@ import React from "react";
 import propTypes from "prop-types";
 
 function Layout({ children }) {
-  return (
-    <>
-      <header>Header</header>
-      {children}
-      <footer>Footer</footer>
-    </>
-  );
+  return <div style={{ height: "100vh" }}>{children}</div>;
 }
 Layout.propTypes = {
   children: propTypes.node.isRequired,
