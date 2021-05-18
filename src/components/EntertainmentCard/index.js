@@ -1,10 +1,22 @@
 import React from "react";
 import propTypes from "prop-types";
 
+import { useHistory } from "react-router-dom";
+
 function EntertainmentCard({ card }) {
-  const { type, description, image } = card;
+  const { type, description, image, link } = card;
+
+  const history = useHistory();
+
+  const goTo = (link) => {
+    history.push(link);
+  };
+
   return (
-    <div className="card shadow-sm w-50 mx-4 cursor-pointer">
+    <div
+      className="card shadow-sm w-50 mx-4 cursor-pointer"
+      onClick={() => goTo(link)}
+    >
       <img
         src={image}
         className="card-img-top"
