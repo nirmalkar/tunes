@@ -30,7 +30,7 @@ function Radio() {
           {stations.map((station, i) => {
             return (
               <div className="col-sm-6 col-md-4 col-lg-3" key={station.id}>
-                <Channels />
+                <Channels station={station} />
               </div>
             );
           })}
