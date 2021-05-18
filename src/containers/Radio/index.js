@@ -38,9 +38,21 @@ function Radio() {
     );
   };
 
+  const getLoader = () => {
+    if (!stations.length)
+      return (
+        <div className="get-centered">
+          <div className="spinner-grow" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      );
+  };
+
   return (
     <Layout>
-      <h1 className="d-flex container p-5  font-monospace text-muted justify-content-center align-self-center">
+      {getLoader()}
+      <h1 className="d-flex container p-5 font-monospace text-muted justify-content-center align-self-center">
         tunes
       </h1>
       {listRadioStations()}
