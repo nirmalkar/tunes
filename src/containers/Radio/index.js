@@ -17,15 +17,14 @@ function Radio() {
       .searchStations({
         language: "english",
         tag: "jazz",
-        limit: 10,
+        limit: 20,
       })
       .then((res) => setStations(res));
   }
-  console.log(stations);
 
   const listRadioStations = () => {
     return (
-      <div className="container">
+      <div className="container pb-4">
         <div className="row g-3">
           {stations.map((station, i) => {
             return (
@@ -41,8 +40,9 @@ function Radio() {
 
   return (
     <Layout>
-      <div>Radio</div>
-      <div className="container h-25"></div>
+      <h1 className="d-flex container p-5  font-monospace text-muted justify-content-center align-self-center">
+        tunes
+      </h1>
       {listRadioStations()}
     </Layout>
   );
