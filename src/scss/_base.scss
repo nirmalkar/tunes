@@ -8,3 +8,12 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.genre-btn:hover {
+  transform: scale(1.1);
+}
+.genre-btn:focus {
+}
+.genre-btn:active {
+  background-color: #f3f3f3;
+}

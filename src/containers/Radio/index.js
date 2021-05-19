@@ -6,17 +6,31 @@ import Channels from "components/Channels";
 
 function Radio() {
   const [stations, setStations] = useState([]);
+  const [genre, setGenre] = useState("all");
 
+  const filters = [
+    "all",
+    "rap",
+    "dance",
+    "rock",
+    "pop",
+    "jazz",
+    "house",
+    "disco",
+    "country",
+    "classical",
+    "retro",
+  ];
   useEffect(() => {
     getRadioStations();
-  }, []);
+  }, [genre]);
 
   async function getRadioStations() {
     const api = new RadioBrowserApi(fetch.bind(window), "My Radio App");
     await api
       .searchStations({
         language: "english",
-        tag: "jazz",
+        tag: genre,
         limit: 20,
       })
       .then((res) => setStations(res));
@@ -25,6 +39,18 @@ function Radio() {
   const listRadioStations = () => {
     return (
       <div className="container pb-4">
+        {filters.map((filter) => {
+          return (
+            <button
+              className="btn shadow-sm font-monospace genre-btn m-2"
+              style={{ background: genre === filter ? "#f3f3f3" : "" }}
+              key="filter"
+              onClick={() => setGenre(filter)}
+            >
+              {filter}
+            </button>
+          );
+        })}
         <div className="row g-3">
           {stations.map((station, i) => {
             return (
