@@ -9,11 +9,13 @@ function Home() {
     <div>
       <Layout>
         <div className="h-100 container-fluid bg-light text-dark">
-          <div className="container h-25"></div>
-          <div className="container w-75 d-flex">
-            {entertainmentCards.map((card) => (
-              <EntertainmentCard key={card.type} card={card} />
-            ))}
+          <div className="container-fluid h-25"></div>
+          <div className="container-fluid">
+            <div className="row d-flex justify-content-center">
+              {entertainmentCards.map((card) => (
+                <EntertainmentCard key={card.type} card={card} />
+              ))}
+            </div>
           </div>
         </div>
       </Layout>

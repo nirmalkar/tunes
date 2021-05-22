@@ -2,32 +2,37 @@ import React from "react";
 import propTypes from "prop-types";
 
 import { useHistory } from "react-router-dom";
+import ReactLottie from "components/ReactLottie";
 
 function EntertainmentCard({ card }) {
-  const { type, description, image, link } = card;
+  const { link, animationData, type } = card;
 
   const history = useHistory();
+
+  const options = {
+    loop: true,
+    autoplay: true,
+    animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
 
   const goTo = (link) => {
     history.push(link);
   };
 
   return (
-    <div
-      className="card shadow-sm w-50 mx-4 cursor-pointer"
-      onClick={() => goTo(link)}
-    >
-      <img
-        src={image}
-        className="card-img-top"
-        style={{ height: "50%" }}
-        alt={type}
-      ></img>
-      <div className="card-body rounded">
-        <h5 className="card-title my-2">{type}</h5>
-        <p className="card-text fw-light font-monospace pt-2 text-muted">
-          {description}
-        </p>
+    <div className="col-md-2">
+      <h4 className="font-monospace text-secondary">{type}</h4>
+      <div
+        className="card mb-3 card cursor-pointer neu"
+        style={{ maxWidth: "540px", maxHeight: "540px" }}
+        onClick={() => goTo(link)}
+      >
+        <div className="row g-0">
+          <ReactLottie options={options} height={200} width={200} />
+        </div>
       </div>
     </div>
   );
