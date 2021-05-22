@@ -3,7 +3,7 @@ import { Route } from "react-router-dom";
 
 import Home from "containers/Home";
 import Radio from "containers/Radio";
-import Auth from "containers/Auth";
+import Auth from "containers/Authentication";
 
 const Routes = () => {
   return (
