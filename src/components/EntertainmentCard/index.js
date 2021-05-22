@@ -23,16 +23,14 @@ function EntertainmentCard({ card }) {
   };
 
   return (
-    <div className="col-md-2">
+    <div className="col-md-4 col-lg-3 col-xxl-2">
       <h4 className="font-monospace text-secondary">{type}</h4>
       <div
         className="card mb-3 card cursor-pointer neu"
         style={{ maxWidth: "540px", maxHeight: "540px" }}
         onClick={() => goTo(link)}
       >
-        <div className="row g-0">
-          <ReactLottie options={options} height={200} width={200} />
-        </div>
+        <ReactLottie options={options} height={200} width={200} />
       </div>
     </div>
   );

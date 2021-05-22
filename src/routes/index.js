@@ -6,11 +6,11 @@ import Radio from "containers/Radio";
 
 const Routes = () => {
   return (
-    <>
+    <div>
       <Route exact path="/" component={Home} />
       <Route exact path="/radio" component={Radio} />
       <Route exact path="/podcast" component={Radio} />
-    </>
+    </div>
   );
 };
 

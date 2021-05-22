@@ -23,3 +23,12 @@
   box-shadow: 12px 12px 24px 0 rgba(0, 0, 0, 0.2),
     -12px -12px 24px 0 rgba(255, 255, 255, 0.5);
 }
+
+.layout-height {
+  height: 100vh;
+}
+@media screen and (max-width: 676px) and (max-height: 676px) {
+  .layout-height {
+    height: 100%;
+  }
+}
