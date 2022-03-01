@@ -21,7 +21,10 @@
   },
   "plugins": ["react"],
   "rules": {
-    "react/display-name": 0
+    "react/display-name": 0,
+    "indent": "off",
+    "react/jsx-indent": "off",
+    "react/jsx-indent-props": "off"
   },
   "settings": {
     "react": {

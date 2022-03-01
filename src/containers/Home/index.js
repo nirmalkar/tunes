@@ -40,6 +40,7 @@ function Home() {
         console.log(err);
       });
   }, [accessToken]);
+
   return (
     <Layout>
       <div className="h-100 container-fluid bg-light text-dark">
